@@ -4,6 +4,8 @@ import AnimalList from './Animal/AnimalList'
 import LocationList from './Location/LocationList'
 import EmployeeList from './Employee/EmployeeList'
 import OwnerList from './Owner/OwnerList'
+import ApiManager from './modules/APIManager'
+
 
 
 class ApplicationViews extends Component {
@@ -15,23 +17,32 @@ class ApplicationViews extends Component {
         owners: []
     }
 
-    componentDidMount() {
-        const newState = {}
 
-        fetch("http://localhost:3000/animals")
-            .then(r => r.json())
-            .then(animals => newState.animals = animals)
-            .then(() => fetch("http://localhost:3000/employees")
-            .then(r => r.json()))
-            .then(employees => newState.employees = employees)
-            .then(() => fetch("http://localhost:3000/owners")
-            .then(r => r.json()))
-            .then(owners => newState.owners = owners)
-            .then(() => fetch("http://localhost:3000/locations")
-            .then(r => r.json()))
-            .then(locations => newState.locations = locations)
-            .then(() => this.setState(newState))
+
+
+
+
+    componentDidMount() {
+        
+         const _state = {}
+        ApiManager.all(animals).then(animals => _state.animals = animals)
+        .then(() => ApiManager.all(employees).then(employees => _state.employees = employees))
+        .then(() =>ApiManager.all(locations).then(locations => _state.locations = locations))
+        .then(() =>ApiManager.all(owners).then(owners => _state.owners = owners))
+        .then(() => {this.setState(_state)})
+
     }
+
+    // deleteAnimal = id => AnimalManager.removeAndList(id)
+    //     .then(animals => this.setState({
+    //         animals: animals
+    //     }))
+
+    //     addAnimal = animal => AnimalManager.addAndList(animal)
+    //     .then(animals => this.setState({
+    //         animals: animals
+    //     }))
+
     deleteAnimal = id => {
         fetch(`http://localhost:3000/animals/${id}`, {
             method: "DELETE"

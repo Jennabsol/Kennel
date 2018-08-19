@@ -15,7 +15,7 @@ export default Object.create(null, {
         value: function (resource, id) {
             return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "DELETE"
-            }).then(e => e.json())
+            }).then(e => e.json()).then(() => this.all(resource))
         }
     },
     add: {
@@ -26,7 +26,7 @@ export default Object.create(null, {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify(newObject)
-            }).then(e => e.json())
+            }).then(e => e.json()).then(() => this.all(resource))
         }
     },
     edit: {
@@ -34,7 +34,7 @@ export default Object.create(null, {
             return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "PUT",
                 body: JSON.stringify(newObject)
-            }).then(e => e.json())
+            }).then(e => e.json()).then(() => this.all(resource))
         }
     },
     //PUT means that you MUST send the entire entity details to a resource, whereas with PATCH, you only send the data that you wish to change aka the delta.
@@ -43,7 +43,7 @@ export default Object.create(null, {
             return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "PATCH",
                 body: JSON.stringify(newObject)
-            }).then(e => e.json())
+            }).then(e => e.json()).then(() => this.all(resource))
         }
     }
 })
