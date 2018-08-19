@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import dog from "../DogIcon.png"
+import dog from "./DogIcon.png"
 import "./animal.css"
 
 export default class AnimalList extends Component {

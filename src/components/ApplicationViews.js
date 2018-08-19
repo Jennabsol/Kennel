@@ -1,9 +1,9 @@
 import { Route } from 'react-router-dom'
 import React, { Component } from "react"
-import AnimalList from './AnimalList'
-import LocationList from './LocationList'
-import EmployeeList from './EmployeeList'
-import OwnerList from './OwnerList'
+import AnimalList from './Animal/AnimalList'
+import LocationList from './Location/LocationList'
+import EmployeeList from './Employee/EmployeeList'
+import OwnerList from './Owner/OwnerList'
 
 
 class ApplicationViews extends Component {
