@@ -1,10 +1,6 @@
 {
   "employees": [
     {
-      "id": 1,
-      "name": "Jessica Younker"
-    },
-    {
       "id": 2,
       "name": "Jordan Nelson"
     },
@@ -31,16 +27,11 @@
   ],
   "animals": [
     {
-      "id": 1,
-      "name": "Doodles"
-    },
-    {
-      "id": 5,
-      "name": "Derkins"
-    },
-    {
-      "id": 6,
-      "name": "Checkers"
+      "name": "Mason",
+      "breed": "erqwe",
+      "employeeId": 2,
+      "ownerId": 1,
+      "id": 1
     }
   ],
   "owners": [
@@ -51,10 +42,6 @@
     {
       "id": 2,
       "name": "Emma Beaton"
-    },
-    {
-      "id": 3,
-      "name": "Dani Adkins"
     },
     {
       "id": 4,

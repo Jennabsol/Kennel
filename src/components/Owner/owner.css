@@ -1,20 +1,20 @@
-.animalButton {
+.ownerButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
 }
 
-.animals {
+.owners {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.animalForm {
+.ownerForm {
     padding: 0 30px;
 }
 
-.icon--dog {
+.icon--person {
     width: 50px;
     height: 50px;
 }
@@ -31,7 +31,7 @@
     flex-direction: column;
 }
 
-.animalButton {
+.ownerButton {
     display: flex;
     justify-content: space-evenly;
     margin: 0 0 10px 0;
