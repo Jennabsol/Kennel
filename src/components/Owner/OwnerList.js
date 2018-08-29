@@ -21,14 +21,14 @@ class OwnerList extends Component {
                 this.props.owners.map(owner =>
                     <div key={owner.id} className="card">
                         <div className="card-body">
-                            <h5 className="card-title">
+                            <div className="card-title">
                                 <img src={person} className="icon--person" />
                                 {owner.name}
                                 <Link className="nav-link" to={`/owners/${owner.id}`}>Details</Link>
                                 <a href="#"
                                     onClick={() => this.props.deleteOwner(owner.id)}
                                     className="card-link">Delete</a>
-                            </h5>
+                            </div>
                         </div>
                     </div>
                 )

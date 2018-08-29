@@ -5,12 +5,8 @@
       "name": "Jordan Nelson"
     },
     {
-      "id": 3,
-      "name": "Zoe LeBlanc"
-    },
-    {
-      "id": 4,
-      "name": "Blaise Roberts"
+      "name": "Jessica",
+      "id": 3
     }
   ],
   "locations": [
@@ -27,11 +23,18 @@
   ],
   "animals": [
     {
-      "name": "Mason",
-      "breed": "erqwe",
-      "employeeId": 2,
-      "ownerId": 1,
+      "name": "sfdasf13lk",
+      "breed": "sdfasdflk",
+      "employeeId": 3,
+      "ownerId": 5,
       "id": 1
+    },
+    {
+      "name": "Kekoa",
+      "breed": "Awesome ",
+      "employeeId": 3,
+      "ownerId": 6,
+      "id": 2
     }
   ],
   "owners": [
@@ -54,6 +57,14 @@
     {
       "id": 6,
       "name": "Angela Lee"
+    },
+    {
+      "name": "ds",
+      "id": 7
+    },
+    {
+      "name": "Jessica",
+      "id": 8
     }
   ]
 }

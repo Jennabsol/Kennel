@@ -12,8 +12,8 @@ export default class AnimalForm extends Component {
 
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
-        const stateToChange = {}
-        stateToChange[evt.target.id] = evt.target.value
+            const stateToChange = {}
+            stateToChange[evt.target.id] = evt.target.value
         this.setState(stateToChange)
     }
 

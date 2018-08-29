@@ -11,6 +11,7 @@ import EmployeeForm from "./Employee/EmployeeForm"
 import EmployeeDetail from './Employee/EmployeeDetail'
 import OwnerForm from "./Owner/OwnerForm"
 import OwnerDetail from './Owner/OwnerDetail'
+import AnimalEditForm from './Animal/AnimalEditForm'
 
 
 
@@ -41,6 +42,10 @@ class ApplicationViews extends Component {
         .then(animals => this.setState({
             animals: animals
         }))
+        editAnimal = (id, animal) => ApiManager.edit("animals", id, animal)
+        .then(animals => this.setState({
+            animals: animals
+        }))
         deleteEmployee = id => ApiManager.delete("employees", id)
         .then(employees => this.setState({
             employees: employees
@@ -60,10 +65,7 @@ class ApplicationViews extends Component {
             owners: owners
         }))
 
-        // editAnimal = (id, animal) => ApiManager.edit("animals", id, animal)
-        // .then(animals => this.setState({
-        //     animals: animals
-        // }))
+
 
     // deleteAnimal = id => {
     //     fetch(`http://localhost:3000/animals/${id}`, {
@@ -101,6 +103,13 @@ class ApplicationViews extends Component {
                     animals={this.state.animals}
                     editAnimal={this.editAnimal} />
                 }} />
+                <Route path="/animals/edit/:animalId(\d+)" render={(props) => {
+                    return <AnimalEditForm {...props}
+                    animals={this.state.animals}
+                    employees={this.state.employees}
+                       owners={this.state.owners}
+                    editAnimal={this.editAnimal}/>
+                }} />
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList {...props}
                        deleteEmployee={this.deleteEmployee}
@@ -133,12 +142,6 @@ class ApplicationViews extends Component {
                     owners={this.state.owners}
                     editOwner={this.editOwner} />
                 }} />
-                                    {/* <Route path="/animals/edit" render={(props) => {
-                                        return <AnimalForm {...props}
-                                           addAnimal={this.addAnimal}
-                                           employees={this.state.employees}
-                                           editAnimal={this.editAnimal} />
-                                    }} /> */}
             </React.Fragment>
         )
     }

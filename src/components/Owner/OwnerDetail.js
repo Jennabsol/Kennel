@@ -9,7 +9,7 @@ export default class OwnerDetail extends Component {
             user clicked on by looking at the `this.props.animals`
             collection that was passed down from ApplicationViews
         */
-        const owner = this.props.owners.find(a => a.id === parseInt(this.props.match.params.ownerId)) || {}
+        const owner = this.props.owners.find(a => a.id === parseInt(this.props.match.params.ownerId, 0)) || {}
 
         return (
             <section className="owner">

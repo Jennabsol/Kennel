@@ -33,7 +33,10 @@ export default Object.create(null, {
         value: function (resource, id, newObject) {
             return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "PUT",
-                body: JSON.stringify(newObject)
+                body: JSON.stringify(newObject),
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }).then(e => e.json()).then(() => this.all(resource))
         }
     },
@@ -42,7 +45,10 @@ export default Object.create(null, {
         value: function (resource, id, newObject) {
             return fetch(`${remoteURL}/${resource}/${id}`, {
                 method: "PATCH",
-                body: JSON.stringify(newObject)
+                body: JSON.stringify(newObject),
+                headers: {
+                    "Content-Type": "application/json"
+                }
             }).then(e => e.json()).then(() => this.all(resource))
         }
     }
