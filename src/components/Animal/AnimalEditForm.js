@@ -4,16 +4,18 @@ import "./animal.css"
 
 
 export default class AnimalEditForm extends Component {
-    componentWillMount() {
+    componentDidMount() {
         const animal = this.props.animals.find(a => a.id === parseInt(this.props.match.params.animalId))
         this.setState(animal);
     }
-    componentWillUnmount() {
-        const animal = this.props.animals.find(a => a.id === parseInt(this.props.match.params.animalId))
-        this.setState(animal);
-    }
+    state = {
+        name:"",
+        id:"",
+        breed:"",
+        ownerId:"",
+        employeeId:""
 
-    state = {}
+}
 
     // Update state whenever an input field is edited
     handleFieldChange = evt => {
@@ -34,6 +36,7 @@ export default class AnimalEditForm extends Component {
             name: this.state.name,
             breed: this.state.breed,
             employeeId: conditionEmployee ? this.state.employeeId : this.props.employees.find(e => e.name === this.state.employeeId).id,
+            //employeeId: this.props.employees.find(e => e.name === this.state.employeeId).id,
             ownerId: conditionOwner ? this.state.ownerId : this.props.owners.find(e => e.name === this.state.ownerId).id,
             id: this.state.id
         }

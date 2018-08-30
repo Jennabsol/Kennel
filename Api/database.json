@@ -21,22 +21,7 @@
       "address": "10101 Binary Court"
     }
   ],
-  "animals": [
-    {
-      "name": "sfdasf13lk",
-      "breed": "sdfasdflk",
-      "employeeId": 3,
-      "ownerId": 5,
-      "id": 1
-    },
-    {
-      "name": "Kekoa",
-      "breed": "Awesome ",
-      "employeeId": 3,
-      "ownerId": 6,
-      "id": 2
-    }
-  ],
+  "animals": [],
   "owners": [
     {
       "id": 1,
