@@ -22,16 +22,29 @@ class ApplicationViews extends Component {
         animals: [],
         locations: [],
         employees: [],
-        owners: []
+        owners: [],
+        animalOwners: []
     }
+
     componentDidMount() {
          const _state = {}
         ApiManager.all("animals").then(animals => _state.animals = animals)
         .then(() => ApiManager.all("employees").then(employees => _state.employees = employees))
         .then(() =>ApiManager.all("locations").then(locations => _state.locations = locations))
         .then(() =>ApiManager.all("owners").then(owners => _state.owners = owners))
+        .then(() =>ApiManager.all("animalOwners").then(animalOwners => _state.animalOwners = animalOwners))
         .then(() => {this.setState(_state)})
         }
+
+        deleteAnimalOwner = id => ApiManager.delete("animalOwners", id)
+        .then(animalOwners => this.setState({
+            animalOwners: animalOwners
+        }))
+
+        addAnimalOwner = animalOwner => ApiManager.add("animalOwners",animalOwner)
+        .then(animalOwners => this.setState({
+            animalOwners: animalOwners
+        }))
 
         deleteAnimal = id => ApiManager.delete("animals", id)
         .then(animals => this.setState({
@@ -42,6 +55,12 @@ class ApplicationViews extends Component {
         .then(animals => this.setState({
             animals: animals
         }))
+        addAnimalStuff = (animal, animalOwner) => ApiManager.addJoiner("animals",animal,"animalOwners",animalOwner)
+        // .then(animals => this.setState({
+        //     animals: animals,
+        //     animalOwners: animalOwners
+        // }))
+
         editAnimal = (id, animal) => ApiManager.edit("animals", id, animal)
         .then(animals => this.setState({
             animals: animals
@@ -76,9 +95,16 @@ class ApplicationViews extends Component {
                 <Route exact path="/animals" render={(props) => {
                     return <AnimalList {...props}
                        deleteAnimal={this.deleteAnimal}
-                       animals={this.state.animals} />
+                       animals={this.state.animals}
+                       addAnimal={this.addAnimal}
+                       employees={this.state.employees}
+                       owners={this.state.owners}
+                       deleteAnimalOwner={this.deleteAnimalOwner}
+                       AnimalOwners={this.state.animalOwners}
+                       addAnimalOwner={this.addAnimalOwner}
+                       addAnimalStuff={this.addAnimalStuff}/>
                 }} />
-                <Route path="/animals/new" render={(props) => {
+                {/* <Route path="/animals/new" render={(props) => {
                     return <AnimalForm {...props}
                        addAnimal={this.addAnimal}
                        employees={this.state.employees}
@@ -96,7 +122,7 @@ class ApplicationViews extends Component {
                     employees={this.state.employees}
                        owners={this.state.owners}
                     editAnimal={this.editAnimal}/>
-                }} />
+                }} /> */}
                 {/* <Route exact path="/employees" render={props => {
                      if (this.isAuthenticated()) {
                     return <EmployeeList deleteEmployee={this.deleteEmployee}
@@ -110,7 +136,8 @@ class ApplicationViews extends Component {
                     return <EmployeeList deleteEmployee={this.deleteEmployee}
                                 animals={this.state.animals}
                                 employees={this.state.employees}
-                                deleteAnimal={this.deleteAnimal}/>
+                                deleteAnimal={this.deleteAnimal}
+                                owners={this.state.owners}/>
                     } else {
                      return <Redirect to="/login" />
                     }

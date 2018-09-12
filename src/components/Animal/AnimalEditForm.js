@@ -53,7 +53,7 @@ export default class AnimalEditForm extends Component {
                         <label htmlFor="animalName">Animal name</label>
                         <input type="text" required="true"
                                className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
+                               onChange={this.handleFieldChange}
                                id="name"
                                placeholder="Animal name"
                                defaultValue={this.state.name} />
@@ -62,14 +62,14 @@ export default class AnimalEditForm extends Component {
                         <label htmlFor="breed">Breed</label>
                         <input type="text" required="true"
                                className="form-control"
-                               onChange={this.handleFieldChange.bind(this)}
+                               onChange={this.handleFieldChange}
                                id="breed" placeholder="Breed"
                                defaultValue={this.state.breed}/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="employee">Assign to caretaker</label>
                         <select defaultValue={this.state.employeeId} name="employee" id="employeeId"
-                                onChange={this.handleFieldChange.bind(this)}>
+                                onChange={this.handleFieldChange}>
                                 <option defaultValue={this.state.employeeId}>{employeeName.name}</option>
                         {
                             this.props.employees.map(e => <option key={e.id} id={e.id}>{e.name}</option>)
@@ -79,7 +79,7 @@ export default class AnimalEditForm extends Component {
                     <div className="form-group">
                         <label htmlFor="owner">Assign to owner</label>
                         <select defaultValue={this.state.ownerId} name="owner" id="ownerId"
-                                onChange={this.handleFieldChange.bind(this)}>
+                                onChange={this.handleFieldChange}>
                                 <option defaultValue={this.state.ownerId}>{ownerName.name}</option>
                         {
                             this.props.owners.map(e => <option key={e.id} id={e.id}>{e.name}</option>)

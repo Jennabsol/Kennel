@@ -23,7 +23,7 @@ export default class AnimalForm extends Component {
      */
     constructNewAnimal = evt => {
         evt.preventDefault()
-        if (this.state.employee === "") {
+        if (this.state.employee ==="") {
             window.alert("Please select a caretaker")
         } else {
             const animal = {

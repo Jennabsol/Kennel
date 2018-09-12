@@ -21,7 +21,70 @@
       "address": "10101 Binary Court"
     }
   ],
-  "animals": [],
+  "animals": [
+    {
+      "name": "Mason",
+      "breed": "humanlk",
+      "employeeId": 2,
+      "ownerId": 1,
+      "id": 1
+    },
+    {
+      "name": "adfdsf",
+      "breed": "hhhhh",
+      "employeeId": 3,
+      "ownerId": 2,
+      "id": 3
+    },
+    {
+      "name": "Fred",
+      "breed": "human",
+      "employeeId": 2,
+      "ownerId": 4,
+      "id": 4
+    },
+    {
+      "name": "sofia",
+      "breed": "human",
+      "employeeId": 3,
+      "ownerId": 6,
+      "id": 5
+    },
+    {
+      "name": "love",
+      "breed": "human",
+      "employeeId": 2,
+      "ownerId": 1,
+      "id": 6
+    },
+    {
+      "name": "Masondf",
+      "breed": "human",
+      "employeeId": 2,
+      "ownerId": 1,
+      "id": 7
+    },
+    {
+      "name": "sdfvSdf",
+      "breed": "df",
+      "employeeId": 2,
+      "ownerId": 2,
+      "id": 8
+    },
+    {
+      "name": "love2",
+      "breed": "human",
+      "employeeId": 2,
+      "ownerId": 1,
+      "id": 9
+    },
+    {
+      "name": "Masondf",
+      "breed": "human",
+      "employeeId": 2,
+      "id": 10
+    }
+  ],
   "owners": [
     {
       "id": 1,
@@ -50,6 +113,42 @@
     {
       "name": "Jessica",
       "id": 8
+    }
+  ],
+  "animalOwners": [
+    {
+      "newObject2": {
+        "ownerId": 1
+      },
+      "resource2": 16,
+      "id": 8
+    },
+    {
+      "newObject2": {
+        "ownerId": 1
+      },
+      "resource2": 6,
+      "id": 9
+    },
+    {
+      "ownerId": 1,
+      "resource2": 7,
+      "id": 10
+    },
+    {
+      "ownerId": 2,
+      "animalId": 8,
+      "id": 11
+    },
+    {
+      "ownerId": 1,
+      "animalId": 9,
+      "id": 12
+    },
+    {
+      "ownerId": 5,
+      "animalId": 10,
+      "id": 13
     }
   ]
 }
