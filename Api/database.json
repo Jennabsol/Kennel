@@ -70,19 +70,6 @@
       "employeeId": 2,
       "ownerId": 2,
       "id": 8
-    },
-    {
-      "name": "love2",
-      "breed": "human",
-      "employeeId": 2,
-      "ownerId": 1,
-      "id": 9
-    },
-    {
-      "name": "Masondf",
-      "breed": "human",
-      "employeeId": 2,
-      "id": 10
     }
   ],
   "owners": [
@@ -117,20 +104,6 @@
   ],
   "animalOwners": [
     {
-      "newObject2": {
-        "ownerId": 1
-      },
-      "resource2": 16,
-      "id": 8
-    },
-    {
-      "newObject2": {
-        "ownerId": 1
-      },
-      "resource2": 6,
-      "id": 9
-    },
-    {
       "ownerId": 1,
       "resource2": 7,
       "id": 10
@@ -139,16 +112,6 @@
       "ownerId": 2,
       "animalId": 8,
       "id": 11
-    },
-    {
-      "ownerId": 1,
-      "animalId": 9,
-      "id": 12
-    },
-    {
-      "ownerId": 5,
-      "animalId": 10,
-      "id": 13
     }
   ]
 }
