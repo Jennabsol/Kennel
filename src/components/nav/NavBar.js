@@ -23,7 +23,11 @@ class NavBar extends Component {
                              results: data
                          })
                      })
-             } else if (!this.state.query) {}
+             }else if (!this.state.query) {
+                 this.setState({
+                     results: []
+                 })
+             }
          })
      }
     render() {
