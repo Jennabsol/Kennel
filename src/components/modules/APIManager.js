@@ -74,5 +74,12 @@ export default Object.create(null, {
                 }
             }).then(e => e.json()).then(() => this.all(resource))
         }
+    },
+    getSearch: {
+        value: function (query) {
+            return fetch(`${remoteURL}/animals?q=${query}`).then(e => e.json())
+        }
     }
+
+
 })

@@ -30,7 +30,6 @@ class DetailAnimalModal extends React.Component {
           <ModalHeader toggle={this.toggle}>Animal Details</ModalHeader>
           <ModalBody>
           <section className="animal">
-          {console.log(employeeName)}
                 <div key={currentAnimal.id} className="card">
                     <div className="card-body">
                         <div className="card-title">
